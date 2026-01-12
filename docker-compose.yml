@@ -1,0 +1,55 @@
+version: '3.9'
+
+services:
+  # Development service - Vite dev server with hot reload
+  dev:
+    build:
+      context: .
+      target: development
+      dockerfile: Dockerfile
+    profiles:
+      - dev
+    container_name: ic3sandy-dev
+    ports:
+      - "3000:3000"
+    volumes:
+      # Bind mount source code for hot reload
+      - ./src:/app/src:cached
+      - ./index.html:/app/index.html:cached
+      - ./vite.config.js:/app/vite.config.js:cached
+      # Use anonymous volume for node_modules (prevent overwrite)
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+      - VITE_HOST=0.0.0.0
+    stdin_open: true
+    tty: true
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:3000"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # Production service - Nginx serving built static files
+  prod:
+    build:
+      context: .
+      target: production
+      dockerfile: Dockerfile
+    profiles:
+      - prod
+    container_name: ic3sandy-prod
+    ports:
+      - "8080:80"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+    labels:
+      - "com.ic3sandy.service=portfolio"
+      - "com.ic3sandy.environment=production"

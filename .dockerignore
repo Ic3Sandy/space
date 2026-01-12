@@ -1,0 +1,55 @@
+# Dependencies (will be installed in container)
+node_modules
+npm-debug.log
+yarn-error.log
+
+# Build outputs (will be generated in container)
+dist
+*.local
+
+# Git and version control
+.git
+.gitignore
+.gitattributes
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# IDE and editor files
+.vscode
+.idea
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Docker files themselves
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# Documentation and non-essential files
+README.md
+LICENSE
+*.md
+docs/
+
+# Testing and CI
+.github
+.gitlab-ci.yml
+coverage/
+.nyc_output
+
+# Logs
+logs
+*.log
+
+# OS files
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+.cache
