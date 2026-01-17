@@ -24,6 +24,9 @@ help:
 	@echo "  make shell-prod   - Open shell in prod container"
 
 # Development commands
+ps:
+	docker compose ps -a
+
 dev:
 	docker compose --profile dev up
 
