@@ -2,59 +2,67 @@
 
 A cosmic-themed portfolio website built with Preact and Vite.
 
-## Docker Setup
+## Local Development
+
+### Prerequisites
+
+- Node.js 20+
+- npm or yarn
 
 ### Quick Start
 
-**Development (Hot Reload):**
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+2. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+3. Open [http://localhost:5173](http://localhost:5173) in your browser
+
+4. Edit files in `src/` - changes will auto-reload in the browser
+
+5. Stop with `Ctrl+C`
+
+### Build for Production
 
 ```bash
-docker-compose --profile dev up
-# or with Make
-make dev
+npm run build
 ```
 
-Access at [http://localhost:3000](http://localhost:3000)
-
-**Production:**
+### Preview Production Build
 
 ```bash
-docker-compose --profile prod up -d
+npm run preview
+```
+
+## Production Docker Setup
+
+### Quick Start
+
+```bash
+docker compose up -d
 # or with Make
 make prod
 ```
 
-Access at [http://localhost](http://localhost)
+Access at [http://localhost:2612](http://localhost:2612)
 
 ### Available Commands
 
-| Command           | Description                                      |
-| ----------------- | ------------------------------------------------ |
-| `make dev`        | Start development server (http://localhost:3000) |
-| `make dev-build`  | Build and run development server                 |
-| `make prod`       | Start production server (http://localhost)       |
-| `make prod-build` | Build and run production server                  |
-| `make stop`       | Stop all containers                              |
-| `make logs-dev`   | View development logs                            |
-| `make logs-prod`  | View production logs                             |
-| `make clean`      | Remove containers and images                     |
-| `make rebuild`    | Clean rebuild of all images                      |
-| `make shell-dev`  | Open shell in dev container                      |
-| `make shell-prod` | Open shell in prod container                     |
-
-### Development Workflow
-
-1. Start development server:
-
-   ```bash
-   make dev
-   ```
-
-2. Edit files in `src/` - changes will auto-reload in the browser
-
-3. View your changes at [http://localhost:3000](http://localhost:3000)
-
-4. Stop with `Ctrl+C`
+| Command           | Description                                        |
+| ----------------- | -------------------------------------------------- |
+| `make prod`       | Start production server (http://localhost:2612)    |
+| `make prod-build` | Build and run production server                    |
+| `make build-prod` | Build production image only                        |
+| `make logs-prod`  | View production logs                               |
+| `make stop`       | Stop all containers                                |
+| `make clean`      | Remove containers and images                       |
+| `make rebuild`    | Clean rebuild of all images                        |
+| `make shell-prod` | Open shell in prod container                       |
 
 ### Production Deployment
 
@@ -64,7 +72,7 @@ Access at [http://localhost](http://localhost)
    make prod
    ```
 
-2. View at [http://localhost](http://localhost)
+2. View at [http://localhost:2612](http://localhost:2612)
 
 3. Check logs if needed:
 
@@ -79,15 +87,11 @@ Access at [http://localhost](http://localhost)
 
 ### Architecture
 
-- **Development:** Node 20 Alpine + Vite dev server with hot reload
-- **Production:** Nginx 1.25 Alpine serving optimized static files
-- **Image Sizes:**
-  - Development: ~250MB (includes Node.js and build tools)
-  - Production: ~40MB (nginx + optimized static assets)
+- **Production Image:** Nginx 1.25 Alpine serving optimized static files
+- **Image Size:** ~40MB (nginx + optimized static assets)
 - **Features:**
-  - Multi-stage Docker build for optimal image sizes
-  - Hot module replacement in development
-  - Gzip compression in production
+  - Multi-stage Docker build for optimal image size
+  - Gzip compression enabled
   - Security headers configured
   - SPA routing support
   - Health checks enabled
@@ -96,17 +100,9 @@ Access at [http://localhost](http://localhost)
 
 **Port already in use?**
 
-```bash
-# Change the port mapping in docker-compose.yml
-# For dev: "3001:3000" instead of "3000:3000"
-# For prod: "8080:80" instead of "80:80"
-```
-
-**Hot reload not working?**
-
-```bash
-# Rebuild the development container
-make dev-build
+Change the port mapping in docker-compose.yml:
+```yaml
+# For prod: "8080:80" instead of "2612:80"
 ```
 
 **Need to start fresh?**
@@ -114,35 +110,4 @@ make dev-build
 ```bash
 # Remove all containers and rebuild
 make rebuild
-```
-
-## Local Development (without Docker)
-
-### Prerequisites
-
-- Node.js 20+
-- npm or yarn
-
-### Installation
-
-```bash
-npm install
-```
-
-### Development Server
-
-```bash
-npm run dev
-```
-
-### Build for Production
-
-```bash
-npm run build
-```
-
-### Preview Production Build
-
-```bash
-npm run preview
 ```
