@@ -1,48 +1,55 @@
+import type { Article } from '../types/data';
 import styles from '../styles/Blog.module.css';
 
-const articles = [
+const articles: Article[] = [
   {
     title: 'Navigating the Quantum Realm of Modern Web Development',
-    excerpt: 'Exploring the intersection of quantum computing concepts and web performance optimization. How thinking in parallel can transform your application architecture.',
+    excerpt:
+      'Exploring the intersection of quantum computing concepts and web performance optimization. How thinking in parallel can transform your application architecture.',
     date: '2026-01-10',
     tags: ['Performance', 'Architecture', 'Web Dev'],
-    url: '#'
+    url: '#',
   },
   {
     title: 'Building Stellar User Experiences with Preact',
-    excerpt: 'A deep dive into why Preact is the perfect choice for performance-critical applications. Learn how to leverage its lightweight nature without sacrificing features.',
+    excerpt:
+      'A deep dive into why Preact is the perfect choice for performance-critical applications. Learn how to leverage its lightweight nature without sacrificing features.',
     date: '2026-01-05',
     tags: ['Preact', 'JavaScript', 'Performance'],
-    url: '#'
+    url: '#',
   },
   {
     title: 'The Art of Cosmic Code: Writing Maintainable Software',
-    excerpt: 'Like the ordered chaos of the universe, great code balances structure with flexibility. Discover principles that stand the test of time.',
+    excerpt:
+      'Like the ordered chaos of the universe, great code balances structure with flexibility. Discover principles that stand the test of time.',
     date: '2025-12-28',
     tags: ['Best Practices', 'Clean Code', 'Philosophy'],
-    url: '#'
+    url: '#',
   },
   {
     title: 'TypeScript: Your Warp Drive to Type Safety',
-    excerpt: 'How TypeScript acts as a navigation system through the vast expanse of JavaScript development, preventing runtime errors before they happen.',
+    excerpt:
+      'How TypeScript acts as a navigation system through the vast expanse of JavaScript development, preventing runtime errors before they happen.',
     date: '2025-12-20',
     tags: ['TypeScript', 'JavaScript', 'Tools'],
-    url: '#'
+    url: '#',
   },
   {
     title: 'Interstellar CSS: Animations That Transcend Dimensions',
-    excerpt: 'Creating smooth, performant animations that capture the wonder of space. From subtle parallax to complex particle systems.',
+    excerpt:
+      'Creating smooth, performant animations that capture the wonder of space. From subtle parallax to complex particle systems.',
     date: '2025-12-15',
     tags: ['CSS', 'Animation', 'Design'],
-    url: '#'
+    url: '#',
   },
   {
     title: 'Docker and the Container Cosmos',
-    excerpt: 'Understanding containerization as isolated universes for your applications. A practical guide to Docker in modern development workflows.',
+    excerpt:
+      'Understanding containerization as isolated universes for your applications. A practical guide to Docker in modern development workflows.',
     date: '2025-12-10',
     tags: ['Docker', 'DevOps', 'Containers'],
-    url: '#'
-  }
+    url: '#',
+  },
 ];
 
 export default function Blog() {
@@ -52,8 +59,8 @@ export default function Blog() {
         <div className={styles.header}>
           <h2 className={styles.title}>Cosmic Chronicles</h2>
           <p className={styles.description}>
-            Thoughts, tutorials, and explorations from the frontiers of technology.
-            Join me on this journey through code and creativity.
+            Thoughts, tutorials, and explorations from the frontiers of technology. Join me on this
+            journey through code and creativity.
           </p>
         </div>
 
@@ -77,7 +84,7 @@ export default function Blog() {
                 {new Date(article.date).toLocaleDateString('en-US', {
                   year: 'numeric',
                   month: 'long',
-                  day: 'numeric'
+                  day: 'numeric',
                 })}
               </div>
 
@@ -86,7 +93,9 @@ export default function Blog() {
 
               <div className={styles.tags}>
                 {article.tags.map((tag, i) => (
-                  <span key={i} className={styles.tag}>{tag}</span>
+                  <span key={i} className={styles.tag}>
+                    {tag}
+                  </span>
                 ))}
               </div>
 

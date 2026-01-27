@@ -1,11 +1,7 @@
 .blog {
   padding: var(--space-3xl) 0;
   position: relative;
-  background: linear-gradient(
-    180deg,
-    transparent 0%,
-    rgba(26, 26, 62, 0.2) 100%
-  );
+  background: linear-gradient(180deg, transparent 0%, rgba(26, 26, 62, 0.2) 100%);
 }
 
 .container {
@@ -22,11 +18,7 @@
 .title {
   font-size: var(--font-size-4xl);
   margin-bottom: var(--space-md);
-  background: linear-gradient(
-    135deg,
-    var(--color-gold),
-    var(--color-amber)
-  );
+  background: linear-gradient(135deg, var(--color-gold), var(--color-amber));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

@@ -5,13 +5,11 @@ export default function Hero() {
     <section className={styles.hero} id="home">
       <div className={styles.content}>
         <h1 className={styles.title}>Ic3Sandy.Space</h1>
-        <p className={styles.subtitle}>
-          Journey Through the Cosmos of Code
-        </p>
+        <p className={styles.subtitle}>Journey Through the Cosmos of Code</p>
         <p className={styles.description}>
           Welcome to my corner of the digital universe. I'm a developer, creator, and explorer
-          navigating the infinite possibilities of technology. Like the vast expanse of space,
-          every project is a new frontier waiting to be discovered.
+          navigating the infinite possibilities of technology. Like the vast expanse of space, every
+          project is a new frontier waiting to be discovered.
         </p>
         <div className={styles.cta}>
           <a href="#portfolio" className="btn">

@@ -1,48 +1,55 @@
+import type { Project } from '../types/data';
 import styles from '../styles/Portfolio.module.css';
 
-const projects = [
+const projects: Project[] = [
   {
     title: 'Cosmic Navigator',
-    description: 'An interactive space exploration app that visualizes celestial bodies and orbital mechanics using WebGL. Users can navigate through our solar system in real-time.',
+    description:
+      'An interactive space exploration app that visualizes celestial bodies and orbital mechanics using WebGL. Users can navigate through our solar system in real-time.',
     tech: ['Preact', 'Three.js', 'WebGL', 'TypeScript'],
     liveUrl: '#',
-    repoUrl: '#'
+    repoUrl: '#',
   },
   {
     title: 'Quantum Dashboard',
-    description: 'A modern analytics dashboard with real-time data visualization and responsive design. Features custom charts and interactive metrics.',
+    description:
+      'A modern analytics dashboard with real-time data visualization and responsive design. Features custom charts and interactive metrics.',
     tech: ['React', 'D3.js', 'Node.js', 'PostgreSQL'],
     liveUrl: '#',
-    repoUrl: '#'
+    repoUrl: '#',
   },
   {
     title: 'Nebula CMS',
-    description: 'A headless content management system built for speed and scalability. Supports markdown, custom fields, and multi-language content.',
+    description:
+      'A headless content management system built for speed and scalability. Supports markdown, custom fields, and multi-language content.',
     tech: ['Next.js', 'GraphQL', 'MongoDB', 'AWS'],
     liveUrl: '#',
-    repoUrl: '#'
+    repoUrl: '#',
   },
   {
     title: 'Starlight CLI',
-    description: 'A command-line tool for automating development workflows. Features include project scaffolding, automated testing, and deployment scripts.',
+    description:
+      'A command-line tool for automating development workflows. Features include project scaffolding, automated testing, and deployment scripts.',
     tech: ['Node.js', 'Commander.js', 'TypeScript', 'Jest'],
     liveUrl: '#',
-    repoUrl: '#'
+    repoUrl: '#',
   },
   {
     title: 'Orbit Sync',
-    description: 'Real-time collaboration platform with live editing, presence indicators, and conflict resolution. Built for distributed teams.',
+    description:
+      'Real-time collaboration platform with live editing, presence indicators, and conflict resolution. Built for distributed teams.',
     tech: ['Vue.js', 'WebSockets', 'Redis', 'Docker'],
     liveUrl: '#',
-    repoUrl: '#'
+    repoUrl: '#',
   },
   {
     title: 'Galactic API',
-    description: 'RESTful API service with authentication, rate limiting, and comprehensive documentation. Handles millions of requests daily.',
+    description:
+      'RESTful API service with authentication, rate limiting, and comprehensive documentation. Handles millions of requests daily.',
     tech: ['Express', 'JWT', 'Redis', 'Swagger'],
     liveUrl: '#',
-    repoUrl: '#'
-  }
+    repoUrl: '#',
+  },
 ];
 
 export default function Portfolio() {
@@ -52,8 +59,8 @@ export default function Portfolio() {
         <div className={styles.header}>
           <h2 className={styles.title}>Featured Projects</h2>
           <p className={styles.description}>
-            Explore my journey through various technologies and domains.
-            Each project represents a unique challenge and learning experience.
+            Explore my journey through various technologies and domains. Each project represents a
+            unique challenge and learning experience.
           </p>
         </div>
 
@@ -65,7 +72,9 @@ export default function Portfolio() {
 
               <div className={styles.techStack}>
                 {project.tech.map((tech, i) => (
-                  <span key={i} className={styles.techTag}>{tech}</span>
+                  <span key={i} className={styles.techTag}>
+                    {tech}
+                  </span>
                 ))}
               </div>
 

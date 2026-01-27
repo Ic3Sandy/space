@@ -1,20 +1,21 @@
 import { useEffect, useState } from 'preact/hooks';
+import type { Particle } from '../types/data';
 import './ParticleSystem.css';
 
 export default function ParticleSystem() {
-  const [particles, setParticles] = useState([]);
+  const [particles, setParticles] = useState<Particle[]>([]);
 
   useEffect(() => {
     // Generate particles
     const particleCount = 30;
-    const newParticles = Array.from({ length: particleCount }, (_, i) => ({
+    const newParticles: Particle[] = Array.from({ length: particleCount }, (_, i) => ({
       id: i,
       left: Math.random() * 100,
       top: Math.random() * 100,
       size: Math.random() * 3 + 1,
       duration: Math.random() * 20 + 15,
       delay: Math.random() * 5,
-      opacity: Math.random() * 0.3 + 0.1
+      opacity: Math.random() * 0.3 + 0.1,
     }));
     setParticles(newParticles);
   }, []);
@@ -32,7 +33,7 @@ export default function ParticleSystem() {
             height: `${particle.size}px`,
             opacity: particle.opacity,
             animationDuration: `${particle.duration}s`,
-            animationDelay: `${particle.delay}s`
+            animationDelay: `${particle.delay}s`,
           }}
         />
       ))}
