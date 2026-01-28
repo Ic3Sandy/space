@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'preact/hooks';
 import type { Particle } from '../types/data';
-import './ParticleSystem.css';
 
 export default function ParticleSystem() {
   const [particles, setParticles] = useState<Particle[]>([]);
@@ -21,12 +20,13 @@ export default function ParticleSystem() {
   }, []);
 
   return (
-    <div className="particle-system" aria-hidden="true">
+    <div className="fixed top-0 left-0 w-full h-full z-0 pointer-events-none overflow-hidden" aria-hidden="true">
       {particles.map(particle => (
         <div
           key={particle.id}
-          className="particle"
+          className="absolute rounded-full animate-float-particle blur-[1px]"
           style={{
+            background: 'radial-gradient(circle, rgba(212, 175, 55, 0.8), transparent)',
             left: `${particle.left}%`,
             top: `${particle.top}%`,
             width: `${particle.size}px`,

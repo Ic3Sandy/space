@@ -104,12 +104,27 @@ export default {
             textShadow: '0 0 20px rgba(255, 165, 0, 0.3), 0 0 30px rgba(255, 165, 0, 0.3)',
           },
         },
+        'float-particle': {
+          '0%, 100%': {
+            transform: 'translate(0, 0) scale(1)',
+          },
+          '25%': {
+            transform: 'translate(20px, -30px) scale(1.1)',
+          },
+          '50%': {
+            transform: 'translate(-15px, -60px) scale(0.9)',
+          },
+          '75%': {
+            transform: 'translate(25px, -40px) scale(1.05)',
+          },
+        },
       },
       animation: {
         'fade-in': 'fadeIn 1s ease-out',
         'float': 'float 3s ease-in-out infinite',
         'twinkle': 'twinkle 2s ease-in-out infinite',
         'glow-pulse': 'glow-pulse 3s infinite',
+        'float-particle': 'float-particle infinite ease-in-out',
       },
       backgroundImage: {
         'gradient-cosmic': 'linear-gradient(to bottom, #000000 0%, #0a0a0f 50%, #1a1a3e 100%)',
