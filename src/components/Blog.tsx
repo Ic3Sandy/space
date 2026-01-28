@@ -1,5 +1,4 @@
 import type { Article } from '../types/data';
-import styles from '../styles/Blog.module.css';
 
 const articles: Article[] = [
   {
@@ -54,25 +53,32 @@ const articles: Article[] = [
 
 export default function Blog() {
   return (
-    <section className={styles.blog} id="blog">
-      <div className={styles.container}>
-        <div className={styles.header}>
-          <h2 className={styles.title}>Cosmic Chronicles</h2>
-          <p className={styles.description}>
+    <section
+      className="py-24 md:py-16 relative bg-gradient-to-b from-transparent to-cosmic-blue/20"
+      id="blog"
+    >
+      <div className="max-w-screen-xl mx-auto px-8">
+        <div className="text-center mb-24">
+          <h2 className="text-4xl mb-6 text-gradient-cosmic">Cosmic Chronicles</h2>
+          <p className="text-lg text-gray-medium max-w-2xl mx-auto">
             Thoughts, tutorials, and explorations from the frontiers of technology. Join me on this
             journey through code and creativity.
           </p>
         </div>
 
-        <div className={styles.grid}>
+        <div className="grid grid-cols-[repeat(auto-fit,minmax(340px,1fr))] md:grid-cols-1 gap-12 md:gap-8">
           {articles.map((article, index) => (
-            <article key={index} className={styles.articleCard}>
-              <div className={styles.date}>
+            <article
+              key={index}
+              className="glass-card p-8 backdrop-blur-md rounded-xl shadow-[0_4px_6px_rgba(0,0,0,0.3)] transition-all duration-300 flex flex-col cursor-pointer hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(0,0,0,0.5),0_0_20px_rgba(255,165,0,0.3)] hover:border-gold"
+            >
+              <div className="text-amber text-sm font-medium mb-4 flex items-center gap-2">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
+                  className="w-4 h-4"
                 >
                   <path
                     strokeLinecap="round"
@@ -88,24 +94,31 @@ export default function Blog() {
                 })}
               </div>
 
-              <h3 className={styles.articleTitle}>{article.title}</h3>
-              <p className={styles.excerpt}>{article.excerpt}</p>
+              <h3 className="text-2xl mb-6 text-gray-light leading-tight">{article.title}</h3>
+              <p className="text-gray-medium mb-6 leading-relaxed flex-grow">{article.excerpt}</p>
 
-              <div className={styles.tags}>
+              <div className="flex flex-wrap gap-2 mb-6">
                 {article.tags.map((tag, i) => (
-                  <span key={i} className={styles.tag}>
+                  <span
+                    key={i}
+                    className="bg-amber/10 border border-amber/30 text-amber px-3 py-1 rounded-full text-xs font-medium"
+                  >
                     {tag}
                   </span>
                 ))}
               </div>
 
-              <a href={article.url} className={styles.readMore}>
+              <a
+                href={article.url}
+                className="text-amber font-semibold inline-flex items-center gap-2 transition-[gap] duration-200 hover:gap-3"
+              >
                 Read More
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
+                  className="w-4 h-4"
                 >
                   <path
                     strokeLinecap="round"

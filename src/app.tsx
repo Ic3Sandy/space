@@ -4,6 +4,7 @@ import Hero from './components/Hero';
 import Portfolio from './components/Portfolio';
 import Blog from './components/Blog';
 import Contact from './components/Contact';
+import './styles/tailwind.css';
 import './styles/global.css';
 
 export default function App() {

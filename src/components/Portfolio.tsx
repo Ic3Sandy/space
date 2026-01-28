@@ -1,5 +1,4 @@
 import type { Project } from '../types/data';
-import styles from '../styles/Portfolio.module.css';
 
 const projects: Project[] = [
   {
@@ -54,37 +53,49 @@ const projects: Project[] = [
 
 export default function Portfolio() {
   return (
-    <section className={styles.portfolio} id="portfolio">
-      <div className={styles.container}>
-        <div className={styles.header}>
-          <h2 className={styles.title}>Featured Projects</h2>
-          <p className={styles.description}>
+    <section className="py-24 md:py-16 relative" id="portfolio">
+      <div className="max-w-screen-xl mx-auto px-8">
+        <div className="text-center mb-24">
+          <h2 className="text-4xl mb-6 text-gradient-cosmic">Featured Projects</h2>
+          <p className="text-lg text-gray-medium max-w-2xl mx-auto">
             Explore my journey through various technologies and domains. Each project represents a
             unique challenge and learning experience.
           </p>
         </div>
 
-        <div className={styles.grid}>
+        <div className="grid grid-cols-[repeat(auto-fit,minmax(320px,1fr))] md:grid-cols-1 gap-12 md:gap-8 mb-16">
           {projects.map((project, index) => (
-            <div key={index} className={styles.projectCard}>
-              <h3 className={styles.projectTitle}>{project.title}</h3>
-              <p className={styles.projectDescription}>{project.description}</p>
+            <div
+              key={index}
+              className="glass-card p-8 backdrop-blur-md rounded-xl shadow-[0_4px_6px_rgba(0,0,0,0.3)] transition-all duration-300 flex flex-col h-full hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(0,0,0,0.5),0_0_20px_rgba(139,92,246,0.3)] hover:border-amber"
+            >
+              <h3 className="text-2xl mb-4 text-gray-light">{project.title}</h3>
+              <p className="text-gray-medium mb-6 flex-grow leading-relaxed">
+                {project.description}
+              </p>
 
-              <div className={styles.techStack}>
+              <div className="flex flex-wrap gap-2 mb-6">
                 {project.tech.map((tech, i) => (
-                  <span key={i} className={styles.techTag}>
+                  <span
+                    key={i}
+                    className="bg-nebula-purple/20 border border-nebula-purple text-nebula-purple px-3 py-1 rounded-full text-sm font-medium"
+                  >
                     {tech}
                   </span>
                 ))}
               </div>
 
-              <div className={styles.projectLinks}>
-                <a href={project.liveUrl} className={styles.projectLink}>
+              <div className="flex gap-6">
+                <a
+                  href={project.liveUrl}
+                  className="inline-flex items-center gap-2 px-6 py-4 bg-transparent border border-amber text-amber rounded-md text-sm font-medium transition-all duration-200 hover:bg-amber hover:text-space-black hover:scale-105"
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
+                    className="w-4 h-4"
                   >
                     <path
                       strokeLinecap="round"
@@ -95,12 +106,16 @@ export default function Portfolio() {
                   </svg>
                   Live Demo
                 </a>
-                <a href={project.repoUrl} className={styles.projectLink}>
+                <a
+                  href={project.repoUrl}
+                  className="inline-flex items-center gap-2 px-6 py-4 bg-transparent border border-amber text-amber rounded-md text-sm font-medium transition-all duration-200 hover:bg-amber hover:text-space-black hover:scale-105"
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
+                    className="w-4 h-4"
                   >
                     <path
                       strokeLinecap="round"
