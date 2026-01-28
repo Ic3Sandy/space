@@ -12,11 +12,13 @@ A cosmic-themed portfolio website built with Preact and Vite.
 ### Quick Start
 
 1. Install dependencies:
+
    ```bash
    npm install
    ```
 
 2. Start the development server:
+
    ```bash
    npm run dev
    ```
@@ -53,16 +55,16 @@ Access at [http://localhost:2612](http://localhost:2612)
 
 ### Available Commands
 
-| Command           | Description                                        |
-| ----------------- | -------------------------------------------------- |
-| `make prod`       | Start production server (http://localhost:2612)    |
-| `make prod-build` | Build and run production server                    |
-| `make build-prod` | Build production image only                        |
-| `make logs-prod`  | View production logs                               |
-| `make stop`       | Stop all containers                                |
-| `make clean`      | Remove containers and images                       |
-| `make rebuild`    | Clean rebuild of all images                        |
-| `make shell-prod` | Open shell in prod container                       |
+| Command           | Description                                     |
+| ----------------- | ----------------------------------------------- |
+| `make prod`       | Start production server (http://localhost:2612) |
+| `make prod-build` | Build and run production server                 |
+| `make build-prod` | Build production image only                     |
+| `make logs-prod`  | View production logs                            |
+| `make stop`       | Stop all containers                             |
+| `make clean`      | Remove containers and images                    |
+| `make rebuild`    | Clean rebuild of all images                     |
+| `make shell-prod` | Open shell in prod container                    |
 
 ### Production Deployment
 
@@ -101,6 +103,7 @@ Access at [http://localhost:2612](http://localhost:2612)
 **Port already in use?**
 
 Change the port mapping in docker-compose.yml:
+
 ```yaml
 # For prod: "8080:80" instead of "2612:80"
 ```
