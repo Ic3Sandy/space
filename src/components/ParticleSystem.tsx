@@ -20,7 +20,10 @@ export default function ParticleSystem() {
   }, []);
 
   return (
-    <div className="fixed top-0 left-0 w-full h-full z-0 pointer-events-none overflow-hidden" aria-hidden="true">
+    <div
+      className="fixed top-0 left-0 w-full h-full z-0 pointer-events-none overflow-hidden"
+      aria-hidden="true"
+    >
       {particles.map(particle => (
         <div
           key={particle.id}

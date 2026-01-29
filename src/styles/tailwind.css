@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 /* Tailwind v4 Theme Configuration */
 @theme {
@@ -59,7 +59,12 @@
   --duration-slow: 500ms;
 
   /* Background Images */
-  --background-image-gradient-cosmic: linear-gradient(to bottom, #000000 0%, #0a0a0f 50%, #1a1a3e 100%);
+  --background-image-gradient-cosmic: linear-gradient(
+    to bottom,
+    #000000 0%,
+    #0a0a0f 50%,
+    #1a1a3e 100%
+  );
   --background-image-gradient-gold: linear-gradient(135deg, #d4af37 0%, #ffa500 50%, #8b5cf6 100%);
   --background-image-gradient-amber: linear-gradient(135deg, #ffa500, #d4af37);
 
@@ -83,7 +88,8 @@
 }
 
 @keyframes float {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0);
   }
   50% {
@@ -92,7 +98,8 @@
 }
 
 @keyframes twinkle {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 1;
   }
   50% {
@@ -101,11 +108,25 @@
 }
 
 @keyframes glow-pulse {
-  0%, 100% {
+  0%,
+  100% {
     text-shadow: 0 0 10px rgba(255, 165, 0, 0.3);
   }
   50% {
-    text-shadow: 0 0 20px rgba(255, 165, 0, 0.3), 0 0 30px rgba(255, 165, 0, 0.3);
+    text-shadow:
+      0 0 20px rgba(255, 165, 0, 0.3),
+      0 0 30px rgba(255, 165, 0, 0.3);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
   }
 }
 
@@ -133,5 +154,10 @@
       0 0 10px rgba(255, 165, 0, 0.3),
       0 0 20px rgba(255, 165, 0, 0.3),
       0 0 30px rgba(255, 165, 0, 0.3);
+  }
+
+  /* Mobile menu slide animation */
+  .animate-slide-in-right {
+    animation: slideInRight 0.3s ease-out;
   }
 }
