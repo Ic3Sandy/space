@@ -3,7 +3,7 @@ import Header from './components/Header';
 import StarField from './components/StarField';
 import ParticleSystem from './components/ParticleSystem';
 import Home from './pages/Home';
-import About from './pages/About';
+import Block from './pages/Block';
 import './styles/tailwind.css';
 import './styles/global.css';
 
@@ -17,7 +17,7 @@ export default function App() {
       <main className="pt-16">
         <Router>
           <Home path="/" />
-          <About path="/about" />
+          <Block path="/blocks" />
         </Router>
       </main>
     </>

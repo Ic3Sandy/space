@@ -19,7 +19,7 @@ export default function Header() {
 
   const navLinks = [
     { label: 'Home', href: '/' },
-    { label: 'About', href: '/about' },
+    { label: 'Blocks', href: '/blocks' },
   ];
 
   const handleLinkClick = () => {
