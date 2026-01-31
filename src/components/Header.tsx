@@ -85,13 +85,26 @@ export default function Header() {
         <>
           {/* Backdrop */}
           <div
-            className="fixed inset-0 bg-void-deep/80 z-30 md:hidden"
+            className="fixed inset-0 bg-void-deep/98 z-30 md:hidden"
             onClick={() => setMobileMenuOpen(false)}
           />
 
           {/* Mobile Menu Drawer */}
-          <div className="fixed top-0 right-0 bottom-0 w-64 bg-void-deep/95 backdrop-blur-xl border-l border-gold/30 z-40 md:hidden animate-slide-in-right">
-            <div className="flex flex-col gap-6 p-8 mt-20">
+          <div className="fixed top-0 right-0 bottom-0 w-64 bg-void-deep backdrop-blur-xl border-l border-gold/30 z-40 md:hidden animate-slide-in-right">
+            {/* Close button */}
+            <button
+              onClick={() => setMobileMenuOpen(false)}
+              className="absolute top-4 right-4 w-10 h-10 flex items-center justify-center text-gold hover:text-amber transition-colors duration-200"
+              aria-label="Close menu"
+            >
+              {/* X icon using CSS */}
+              <div className="relative w-6 h-6">
+                <span className="absolute top-1/2 left-0 w-full h-0.5 bg-current rotate-45 -translate-y-1/2" />
+                <span className="absolute top-1/2 left-0 w-full h-0.5 bg-current -rotate-45 -translate-y-1/2" />
+              </div>
+            </button>
+
+            <div className="flex flex-col gap-6 p-8 mt-20 bg-void-deep/90 backdrop-blur-md rounded-lg border border-gold/20">
               {navLinks.map(link => (
                 <Link
                   key={link.href}
